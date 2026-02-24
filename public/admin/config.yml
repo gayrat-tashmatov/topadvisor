@@ -9,41 +9,95 @@ public_folder: /images/uploads
 
 collections:
   - name: insights
-    label: Статьи и дайджесты
+    label: Insights
     folder: content/insights
     create: true
     fields:
-      - {label: Заголовок, name: title, widget: string}
-      - {label: Дата, name: date, widget: datetime}
-      - {label: Тип, name: type, widget: select, options: [digest, article, report]}
-      - {label: Время чтения, name: readTime, widget: string}
-      - {label: Описание, name: excerpt, widget: text}
-      - {label: Текст, name: body, widget: markdown}
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Type
+        name: type
+        widget: select
+        options:
+          - digest
+          - article
+          - report
+      - label: Read Time
+        name: readTime
+        widget: string
+      - label: Excerpt
+        name: excerpt
+        widget: text
+      - label: Body
+        name: body
+        widget: markdown
 
   - name: projects
-    label: Проекты
+    label: Projects
     folder: content/projects
     create: true
     fields:
-      - {label: Название, name: title, widget: string}
-      - {label: Клиент, name: client, widget: string}
-      - {label: Год, name: year, widget: string}
-      - {label: Практика, name: practice, widget: select, options: [Strategy, Transformation, Legal, Government]}
-      - {label: Описание, name: description, widget: text}
-      - {label: Подробности, name: body, widget: markdown}
+      - label: Title
+        name: title
+        widget: string
+      - label: Client
+        name: client
+        widget: string
+      - label: Year
+        name: year
+        widget: string
+      - label: Practice
+        name: practice
+        widget: select
+        options:
+          - Strategy
+          - Transformation
+          - Legal
+          - Government
+      - label: Description
+        name: description
+        widget: text
+      - label: Body
+        name: body
+        widget: markdown
 
   - name: team
-    label: Команда
+    label: Team
     folder: content/team
     create: true
     fields:
-      - {label: Имя, name: name, widget: string}
-      - {label: Должность, name: role, widget: string}
-      - {label: Уровень, name: level, widget: select, options: [leadership, team]}
-      - {label: Порядок, name: order, widget: number}
-      - {label: Фото, name: photo, widget: image, required: false}
-      - {label: Описание, name: bio, widget: text}
-      - {label: LinkedIn, name: linkedin, widget: string, required: false}
-      - {label: Email, name: email, widget: string, required: false}
+      - label: Name
+        name: name
+        widget: string
+      - label: Role
+        name: role
+        widget: string
+      - label: Level
+        name: level
+        widget: select
+        options:
+          - leadership
+          - team
+      - label: Order
+        name: order
+        widget: number
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
+      - label: Bio
+        name: bio
+        widget: text
+      - label: LinkedIn
+        name: linkedin
+        widget: string
+        required: false
+      - label: Email
+        name: email
+        widget: string
+        required: false
 ```
-
