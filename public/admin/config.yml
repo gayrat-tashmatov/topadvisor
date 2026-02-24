@@ -2,7 +2,8 @@ backend:
   name: github
   repo: gayrat-tashmatov/topadvisor
   branch: main
-  site_domain: rainbow-churros-e99a63.netlify.app
+  auth_type: pkce
+  app_id: Ov23ctwrNwGwPjZHmVYy
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
