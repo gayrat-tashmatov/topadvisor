@@ -1,0 +1,142 @@
+backend:
+  name: github
+  repo: gayrat-tashmatov/topadvisor
+  branch: main
+  site_domain: rainbow-churros-e99a63.netlify.app
+  auth_type: pkce
+  app_id: # Добавим после регистрации OAuth App
+
+# Где хранятся загруженные фото
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Локализация админки
+locale: "ru"
+
+# Коллекции контента
+collections:
+
+  # ═══════════════════════════════════
+  # INSIGHTS — Статьи и дайджесты
+  # ═══════════════════════════════════
+  - name: "insights"
+    label: "📝 Статьи и дайджесты"
+    folder: "content/insights"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sort: "date:desc"
+    fields:
+      - { label: "Заголовок (RU)", name: "title", widget: "string" }
+      - { label: "Title (EN)", name: "titleEn", widget: "string", required: false }
+      - { label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Тип", name: "type", widget: "select", options: 
+          - { label: "Дайджест", value: "digest" }
+          - { label: "Аналитика", value: "article" }
+          - { label: "Отчёт", value: "report" }
+        }
+      - { label: "Теги", name: "tags", widget: "list", default: [] }
+      - { label: "Время чтения", name: "readTime", widget: "string", default: "5 мин" }
+      - { label: "Обложка", name: "image", widget: "image", required: false }
+      - { label: "Краткое описание (RU)", name: "excerpt", widget: "text" }
+      - { label: "Excerpt (EN)", name: "excerptEn", widget: "text", required: false }
+      - { label: "Текст статьи (RU)", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════
+  # PROJECTS — Кейсы и проекты
+  # ═══════════════════════════════════
+  - name: "projects"
+    label: "📁 Проекты"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Название проекта", name: "title", widget: "string" }
+      - { label: "Project Title (EN)", name: "titleEn", widget: "string", required: false }
+      - { label: "Клиент", name: "client", widget: "string" }
+      - { label: "Год", name: "year", widget: "string" }
+      - { label: "Практика", name: "practice", widget: "select", options:
+          - { label: "Strategy & Advisory", value: "Strategy" }
+          - { label: "Business Transformation", value: "Transformation" }
+          - { label: "Legal & Regulatory", value: "Legal" }
+          - { label: "Government & Public Sector", value: "Government" }
+        }
+      - { label: "Краткое описание", name: "description", widget: "text" }
+      - { label: "Description (EN)", name: "descriptionEn", widget: "text", required: false }
+      - { label: "Логотип клиента", name: "logo", widget: "image", required: false }
+      - { label: "Полное описание", name: "body", widget: "markdown", required: false }
+
+  # ═══════════════════════════════════
+  # TEAM — Команда
+  # ═══════════════════════════════════
+  - name: "team"
+    label: "👥 Команда"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Имя", name: "name", widget: "string" }
+      - { label: "Name (EN)", name: "nameEn", widget: "string", required: false }
+      - { label: "Должность (RU)", name: "role", widget: "string" }
+      - { label: "Role (EN)", name: "roleEn", widget: "string", required: false }
+      - { label: "Уровень", name: "level", widget: "select", options:
+          - { label: "Лидерство", value: "leadership" }
+          - { label: "Команда", value: "team" }
+        }
+      - { label: "Порядок отображения", name: "order", widget: "number", default: 10 }
+      - { label: "Фото", name: "photo", widget: "image", required: false }
+      - { label: "Компетенции", name: "expertise", widget: "list", default: [] }
+      - { label: "Описание (RU)", name: "bio", widget: "text" }
+      - { label: "Bio (EN)", name: "bioEn", widget: "text", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+
+  # ═══════════════════════════════════
+  # SETTINGS — Настройки сайта
+  # ═══════════════════════════════════
+  - name: "settings"
+    label: "⚙️ Настройки сайта"
+    files:
+      - label: "Главная страница"
+        name: "homepage"
+        file: "content/settings/homepage.yml"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Слоган (RU)", name: "tagline", widget: "string", default: "СТРАТЕГИЧЕСКИЙ КОНСАЛТИНГ" }
+              - { label: "Заголовок строка 1 (RU)", name: "title1", widget: "string" }
+              - { label: "Заголовок строка 2 (RU)", name: "title2", widget: "string" }
+              - { label: "Подзаголовок (RU)", name: "subtitle", widget: "string" }
+              - { label: "Описание (RU)", name: "description", widget: "text" }
+          - label: "Цифры"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Число", name: "value", widget: "number" }
+              - { label: "Суффикс (+, и т.д.)", name: "suffix", widget: "string", default: "+" }
+              - { label: "Подпись (RU)", name: "label", widget: "string" }
+              - { label: "Label (EN)", name: "labelEn", widget: "string" }
+
+      - label: "Контакты и соцсети"
+        name: "contacts"
+        file: "content/settings/contacts.yml"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Телефон", name: "phone", widget: "string" }
+          - { label: "Адрес (RU)", name: "address", widget: "string" }
+          - { label: "Address (EN)", name: "addressEn", widget: "string" }
+          - { label: "Telegram", name: "telegram", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Часы работы (RU)", name: "hours", widget: "string", default: "Пн — Пт: 9:00 — 18:00" }
+
+      - label: "Клиенты"
+        name: "clients"
+        file: "content/settings/clients.yml"
+        fields:
+          - label: "Список клиентов"
+            name: "clients"
+            widget: "list"
+            fields:
+              - { label: "Название", name: "name", widget: "string" }
+              - { label: "Логотип", name: "logo", widget: "image", required: false }
