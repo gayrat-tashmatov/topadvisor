@@ -100,4 +100,3 @@ collections:
         name: email
         widget: string
         required: false
-```
