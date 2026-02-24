@@ -33,22 +33,31 @@ export function Header() {
     router.push(segments.join('/'));
   }
 
+  // Hero is dark, so header starts transparent-on-dark, then becomes white
+  const isTop = !scrolled;
+
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         scrolled
-          ? 'bg-navy-900/95 backdrop-blur-xl border-b border-white/[0.06] py-3'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-navy-100/40 py-3 shadow-sm'
           : 'bg-transparent py-5'
       )}
     >
       <div className="container-wide section-padding flex items-center justify-between">
         {/* Logo */}
         <a href={`/${locale}`} className="flex flex-col">
-          <span className="font-display text-xl font-bold tracking-[0.15em] text-gold-400">
+          <span className={cn(
+            "font-display text-xl font-bold tracking-[0.15em] transition-colors duration-500",
+            isTop ? "text-gold-400" : "text-navy-500"
+          )}>
             TOP ADVISOR
           </span>
-          <span className="text-[10px] tracking-[0.3em] text-white/30 uppercase -mt-0.5">
+          <span className={cn(
+            "text-[10px] tracking-[0.3em] uppercase -mt-0.5 transition-colors duration-500",
+            isTop ? "text-white/30" : "text-navy-300"
+          )}>
             Consulting
           </span>
         </a>
@@ -59,14 +68,17 @@ export function Header() {
             <a
               key={link.key}
               href={`/${locale}${link.href}`}
-              className="text-sm text-white/60 hover:text-white transition-colors duration-300 tracking-wide"
+              className={cn(
+                "text-sm transition-colors duration-300 tracking-wide",
+                isTop ? "text-white/60 hover:text-white" : "text-navy-400 hover:text-navy-700"
+              )}
             >
               {t(link.key)}
             </a>
           ))}
         </nav>
 
-        {/* Right side: Lang + CTA */}
+        {/* Right side */}
         <div className="hidden lg:flex items-center gap-5">
           {/* Language Switcher */}
           <div className="flex items-center gap-1">
@@ -77,8 +89,8 @@ export function Header() {
                 className={cn(
                   'text-xs font-mono px-2 py-1 rounded transition-all duration-200',
                   locale === l.code
-                    ? 'text-gold-400 bg-gold-400/10 font-bold'
-                    : 'text-white/30 hover:text-white/60'
+                    ? isTop ? 'text-gold-400 bg-gold-400/10 font-bold' : 'text-gold-500 bg-gold-400/10 font-bold'
+                    : isTop ? 'text-white/30 hover:text-white/60' : 'text-navy-300 hover:text-navy-500'
                 )}
               >
                 {l.label}
@@ -89,7 +101,7 @@ export function Header() {
           {/* CTA */}
           <a
             href={`/${locale}/contacts`}
-            className="text-sm font-semibold text-navy-900 bg-gold-400 hover:bg-gold-300 px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/20"
+            className="text-sm font-semibold text-white bg-navy-500 hover:bg-navy-600 px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-navy-500/15"
           >
             {t('consultation')}
           </a>
@@ -97,7 +109,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden text-white/60 hover:text-white"
+          className={cn("lg:hidden transition-colors", isTop ? "text-white/60" : "text-navy-500")}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -106,13 +118,13 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-navy-900/98 backdrop-blur-xl border-t border-white/[0.06]">
+        <div className="lg:hidden bg-white border-t border-navy-100/40 shadow-lg">
           <nav className="section-padding py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.key}
                 href={`/${locale}${link.href}`}
-                className="text-lg text-white/70 hover:text-white py-2 border-b border-white/[0.04]"
+                className="text-lg text-navy-500 hover:text-navy-700 py-2 border-b border-navy-50"
                 onClick={() => setMobileOpen(false)}
               >
                 {t(link.key)}
@@ -126,8 +138,8 @@ export function Header() {
                   className={cn(
                     'text-sm font-mono px-4 py-2 rounded-lg',
                     locale === l.code
-                      ? 'text-gold-400 bg-gold-400/10 font-bold'
-                      : 'text-white/30 bg-white/[0.03]'
+                      ? 'text-gold-500 bg-gold-400/10 font-bold'
+                      : 'text-navy-300 bg-navy-50'
                   )}
                 >
                   {l.label}
@@ -136,7 +148,7 @@ export function Header() {
             </div>
             <a
               href={`/${locale}/contacts`}
-              className="mt-2 text-center text-sm font-semibold text-navy-900 bg-gold-400 px-5 py-3 rounded-lg"
+              className="mt-2 text-center text-sm font-semibold text-white bg-navy-500 px-5 py-3 rounded-lg"
               onClick={() => setMobileOpen(false)}
             >
               {t('consultation')}

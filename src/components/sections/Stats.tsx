@@ -37,7 +37,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [visible, value]);
 
   return (
-    <div ref={ref} className="font-display text-display-lg md:text-display-xl font-bold text-gold-400">
+    <div ref={ref} className="font-display text-display-lg md:text-display-xl font-bold text-navy-700">
       {count}{suffix}
     </div>
   );
@@ -47,17 +47,17 @@ export function Stats() {
   const t = useTranslations('stats');
 
   return (
-    <section className="relative py-20 md:py-28 bg-navy-800/50">
-      {/* Top and bottom lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+    <section className="relative py-20 md:py-28 bg-white">
+      {/* Top and bottom borders */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-navy-100 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-navy-100 to-transparent" />
 
       <div className="container-wide section-padding">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat) => (
             <div key={stat.key} className="text-center">
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-              <p className="text-sm text-white/30 mt-2 tracking-wide">
+              <p className="text-sm text-navy-400 mt-2 tracking-wide">
                 {t(stat.key)}
               </p>
             </div>
