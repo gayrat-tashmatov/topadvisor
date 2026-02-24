@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "practices": "Practices",
+    "projects": "Projects",
+    "insights": "Insights",
+    "team": "Team",
+    "about": "About",
+    "contacts": "Contact",
+    "consultation": "Get in Touch"
+  },
+  "hero": {
+    "tagline": "STRATEGIC ADVISORY",
+    "title_line1": "Strategic Advisory",
+    "title_line2": "for Emerging Markets",
+    "subtitle": "Uzbekistan. Central Asia. CIS.",
+    "description": "We connect international capital with Central Asian opportunities through strategic expertise, legal protection, and deep local context understanding.",
+    "cta": "Discuss Your Project",
+    "cta_secondary": "Our Practices"
+  },
+  "insights": {
+    "section_tag": "INSIGHTS",
+    "title": "Insights & Analytics",
+    "view_all": "View All",
+    "read_more": "Read",
+    "digest": "Digest",
+    "article": "Analysis",
+    "report": "Report"
+  },
+  "practices": {
+    "section_tag": "PRACTICES",
+    "title": "Areas of Expertise",
+    "learn_more": "Learn More",
+    "strategy": {
+      "title": "Strategy & Advisory",
+      "description": "Strategic planning, investment consulting, PPP, market entry strategy"
+    },
+    "transformation": {
+      "title": "Business Transformation",
+      "description": "BPM, business process reengineering, digital transformation, optimization"
+    },
+    "legal": {
+      "title": "Legal & Regulatory",
+      "description": "IP management, compliance, data protection, labor law"
+    },
+    "government": {
+      "title": "Government & Public Sector",
+      "description": "International projects with EBRD, EU, World Bank, government programs"
+    }
+  },
+  "stats": {
+    "projects": "Projects Delivered",
+    "experts": "Team Experts",
+    "practices": "Practice Areas",
+    "years": "Years in Market"
+  },
+  "clients": {
+    "section_tag": "CLIENTS",
+    "title": "Trusted By"
+  },
+  "cta": {
+    "title": "Weekly Legislative Review",
+    "description": "Subscribe to our digest — key regulatory changes, analytics, and expert recommendations every Monday.",
+    "placeholder": "Your email",
+    "button": "Subscribe",
+    "telegram": "Or subscribe via Telegram"
+  },
+  "footer": {
+    "description": "Strategic advisory for emerging markets in Central Asia",
+    "practices": "Practices",
+    "company": "Company",
+    "contacts": "Contact",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved"
+  }
+}

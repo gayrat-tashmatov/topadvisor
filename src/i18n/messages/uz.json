@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "practices": "Yo'nalishlar",
+    "projects": "Loyihalar",
+    "insights": "Tahlillar",
+    "team": "Jamoa",
+    "about": "Biz haqimizda",
+    "contacts": "Aloqa",
+    "consultation": "Maslahat"
+  },
+  "hero": {
+    "tagline": "STRATEGIK KONSALTING",
+    "title_line1": "O'sib borayotgan bozorlar",
+    "title_line2": "uchun strategik konsalting",
+    "subtitle": "O'zbekiston. Markaziy Osiyo. MDH.",
+    "description": "Biz xalqaro kapitalni Markaziy Osiyo imkoniyatlari bilan strategik ekspertiza, huquqiy himoya va mahalliy kontekstni chuqur tushunish orqali bog'laymiz.",
+    "cta": "Loyihani muhokama qilish",
+    "cta_secondary": "Bizning yo'nalishlar"
+  },
+  "insights": {
+    "section_tag": "TAHLILLAR",
+    "title": "Tahlillar va sharhlar",
+    "view_all": "Barchasini ko'rish",
+    "read_more": "O'qish",
+    "digest": "Dayjest",
+    "article": "Tahlil",
+    "report": "Hisobot"
+  },
+  "practices": {
+    "section_tag": "YO'NALISHLAR",
+    "title": "Ekspertiza yo'nalishlari",
+    "learn_more": "Batafsil",
+    "strategy": {
+      "title": "Strategy & Advisory",
+      "description": "Strategik rejalashtirish, investitsiya konsaltingi, DXSh, bozorga kirish strategiyasi"
+    },
+    "transformation": {
+      "title": "Business Transformation",
+      "description": "BPM, biznes jarayonlarini qayta qurish, raqamli transformatsiya"
+    },
+    "legal": {
+      "title": "Legal & Regulatory",
+      "description": "Intellektual mulk boshqaruvi, compliance, shaxsiy ma'lumotlar himoyasi"
+    },
+    "government": {
+      "title": "Government & Public Sector",
+      "description": "EBTK, Yevropa Ittifoqi, Jahon banki xalqaro loyihalari"
+    }
+  },
+  "stats": {
+    "projects": "Amalga oshirilgan loyihalar",
+    "experts": "Jamoada ekspertlar",
+    "practices": "Ekspertiza yo'nalishlari",
+    "years": "Bozorda yillar"
+  },
+  "clients": {
+    "section_tag": "MIJOZLAR",
+    "title": "Bizga ishonishadi"
+  },
+  "cta": {
+    "title": "Haftalik qonunchilik sharhi",
+    "description": "Dayjestga obuna bo'ling — HHH ning asosiy o'zgarishlari, tahlillar va ekspert tavsiylari har dushanba.",
+    "placeholder": "Sizning email",
+    "button": "Obuna bo'lish",
+    "telegram": "Yoki Telegramda obuna bo'ling"
+  },
+  "footer": {
+    "description": "Markaziy Osiyo o'sib borayotgan bozorlari uchun strategik konsalting",
+    "practices": "Yo'nalishlar",
+    "company": "Kompaniya",
+    "contacts": "Aloqa",
+    "privacy": "Maxfiylik siyosati",
+    "rights": "Barcha huquqlar himoyalangan"
+  }
+}
